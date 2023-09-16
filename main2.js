@@ -20,8 +20,9 @@ var inputWidth = 0, inputHeight = 0;
 var uploadArea = document.getElementById('uploadArea');
 var uploadButton = document.getElementById('uploadButton');
 var preview = document.getElementById('inputPreview');
-var txPreview = document.getElementById('txPreview');
 var pvWrap = document.getElementById('previewWrapper');
+var txPreview = document.getElementById('txPreview');
+var txWrap = document.getElementById('txWrap');
 var canIn = document.getElementById('canIn');
 var canOut = document.getElementById('canOut');
 var gl = canIn.getContext("webgl", {preserveDrawingBuffer: true});
@@ -124,7 +125,10 @@ function setRasterSize(){
   samplingRaster.style.width = fromX[3] + "px";
   fromY[2] = fromY[3] = 10 * parseInt(setH.value);
   samplingRaster.style.height = fromY[3] + "px";
+  txWrap.style = "width: " + parseInt(setW.value) / devicePixelRatio + "px; height: " + parseInt(setH.value)/ devicePixelRatio + "px";
+
   if(existingCorners == 4) updateRasterTransform();
+  
 }
 
 function swapDimensions(){
