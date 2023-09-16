@@ -1,0 +1,435 @@
+:root { 
+  --accent: rgb(25, 40, 60); 
+  --sat: navy;
+  --dark: rgb(0, 8, 25);
+  --txt: #eee;
+}
+
+
+body {
+  background-color: var(--accent);  
+  overflow: hidden;
+  display: flex;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, 'Nimbus Sans', 'Liberation Sans', 'Open Sans', Roboto, sans-serif;
+  color: var(--txt);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  min-width: 400px;
+  max-width: 100%;
+  padding: 20px;
+  background-color: white; 
+  border-radius: 4px;
+}
+
+.section {
+  margin: 10px 0;
+}
+
+.sub-section {
+  clear: both;
+  margin-bottom: 1px;
+}
+
+.section,
+.sub-section {
+  width: 100%;
+}
+
+.column {
+  float: left;
+}
+
+.column-center {
+  min-width: 160px;
+  text-align: center;
+}
+
+.column-right {
+  float: right;
+}
+
+input[type="file"] {
+  font-size: 1.0em;
+  padding: 6px 20px;
+}
+
+input[type="number"] {
+  font-size: 1.0em;
+  width: 4em;
+  color: black;
+  padding: 2px 4px;
+}
+
+
+
+input[type="radio"] {
+  font-size: 1.0em;
+  /*width: 2em;*/
+  text-align: left;
+}
+  
+input[type="button"] {
+  background: var(--sat);
+  color: #fff;
+  border-radius: 4px;
+  padding: 4px 8px;
+  border: none;
+}
+
+input[type="button"]:hover {
+  background-color: #449;
+}
+
+input[type="button"]:active {
+  background-color: var(--accent);
+}
+
+button,
+input[type="file"] {
+  background: var(--accent);
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  font-size: .9em;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+  padding: 4px 8px;
+}
+
+
+.buttonDisabled {
+  color: #888;
+
+}
+
+#myViewport {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#myWindow {
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#myContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#myContent img {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: auto;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+#myContent div {
+  position: absolute;
+  font-size: 80px;
+  background: lightskyblue;
+  border-radius: 50%;
+  padding: 60px;
+}
+
+/*
+  :root { --stn: rgb(34, 85, 255); }
+  * {font-family: Helvetica, Nimbus Sans, Liberation Sans, sans-serif; color: #fff;}
+  body  {display:grid; margin-top: -40px; place-items:center; background-color: #000}
+  p, table {margin-bottom: 20px}
+  
+  td, p {background-color: var(--stn); font-family: Bahnschrift, Segoe UI, Noto Sans; padding: 0px 10px}
+  p {padding: 2px 10px}
+  input[type=checkbox] {transform: scale(1.5); width: 50%; background: #ff0; margin-left: -21%}
+  .s:active {border: 5px green; background-color: yellow}
+  .i, input[type=button] {accent-color: var(--stn); background-color: var(--stn); font-size: 12pt; border: none}
+  .i {width: 98%; padding: 3px}
+  th{padding-left: 10px; padding-top: 10px; text-align: left;}
+  #b {position:relative; display:grid; place-items:center; background-color: #111; max-width: 520px; padding: 20px; margin-top: 15vh; border-radius: 8px; box-shadow:inset 0px 0px 0px 8px #aaa;}
+  #b:before, #b:after, #b>:first-child:before, #b>:first-child:after {
+      position:absolute;
+      border:#0006 solid 5px;
+      content:' '
+  }
+  #b:before {top:0;left:0;border-width: 10px 10px 0 0}
+  #b:after {top:0;right:0;border-width: 10px 10px 0 0}
+  #b>:first-child:before {bottom:0;right:0;border-width: 0 10px 10px 0}
+  #b>:first-child:after {bottom:0;left:0;border-width: 0 0 10px 10px}
+*/
+
+ /* The sidebar menu */
+#sidebar {
+  height: 100vh; /* 100% Full-height */
+  max-width: 500px;
+  width: -webkit-calc(100% - 50px);
+  width:    -moz-calc(100% - 50px);
+  width:         calc(100% - 50px);
+  padding-left: 30px; 
+ /* float: right;
+ /* position: absolute; /* Stay in place */
+ /* z-index: 0; /* Stay on top */
+ /* top: 0;
+  right: 0; */
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: hidden;
+ /* padding-top: 60px; /* Place content 60px from the top */
+/*  transition-property: none;*/
+  transition: max-width 0.2s; /* duration of slide effect */
+  display: flex;
+  flex-flow: column;
+}
+
+#sidebarContent {
+/*  position: relative; */
+/*  height: 100%; /* 100% Full-height */
+  width: 100%;
+  min-width: 400px;
+/*  left: 0px; 
+  top: 60px;
+  right: 0px;
+  bottom: 0px;
+*/
+  flex: 1 1 auto;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: auto;
+  padding-top: 0px; /* Place content 60px from the top */
+  /*transition-property: none;*/
+  /*transition: 0.2s; /* duration of slide effect */
+  color: white;
+}
+
+
+/* The sidebar links */
+#sidebarContent a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #888;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Position and style the close button (top right corner) 
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}*/
+
+/* The button used to open the sidebar */
+#sidebarToggler {
+  position: absolute;
+  float: right;
+  right: 0px;
+  width: 25px;
+  height: 50px;
+  border-radius: 25px 0 0 25px;
+  font-size: 30px;
+  cursor: pointer;
+  background-color: #111;
+  color: #888;
+  padding: 0 0 4px 2px;
+  border: none;
+  z-index: 55;
+  transition: right .2s;
+}
+
+#sidebarToggler:hover {
+  background-color: #444;
+}
+
+label {
+  background-color: navy;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color .2s;
+  /*margin-bottom: .5rem;
+  margin-top: .5rem;
+  margin-left: .3rem;*/
+  display: inline-block;
+}
+
+label:hover {
+  background-color: #0088 !important;
+}
+
+#dragText {
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+}
+
+#uploadArea {
+  background-color: #334;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  
+  
+/*  right: 10px;
+  bottom: 10px;*/
+  z-index: 0;
+/*  cursor: pointer;*/
+  transition: background-color .2s;
+}
+
+.uploadAreaHidden {
+  visibility: hidden;
+}
+
+.uploadAreaActive {
+  background-color: #668 !important;
+}
+
+
+#uploadFrame {
+  position: absolute;
+  margin: 10vh;
+  padding: 10px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  border-radius: 20px;
+  border: 4px dashed #0003;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#samplingRaster, #txGrid {
+  z-index: 1;
+  background-image: url(littleCircle.svg);
+  background-repeat: space;
+  position: absolute;
+  transform-origin: 0 0;
+  box-shadow: inset 0 0 0 2px black;
+  /*visibility: hidden;
+  /*transform: matrix3d(0.72958, 1.96219e-9, 0, -0.000514377, -0.00581395, 0.93782, 0, -0.00036151, 0, 0, 1, 0, 1, -0.0000038147, 0, 1);*/
+}
+
+@media (max-width:600px) {
+  #uploadFrame {
+    border: none;
+    padding: 0;
+  }
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#picArea {
+  height: 100vh;
+  min-width: 50px;
+  transition: width .2s; /* If you want a transition effect */
+  padding: 0;
+  width: 100%;
+  position: relative;
+}
+
+#scrollablePreview {
+  position: relative;
+  cursor: crosshair;
+  line-height: 0;
+}
+
+.box {
+  margin: 20px;
+  padding: 10px;
+  height: 150px;
+  width: 500px;
+  border: 1px solid black;
+  background-image: url(littleCircle.svg);
+  background-repeat: space;
+}
+
+.cornerPoint {
+  width: 18px;
+  height: 18px;
+  background-color: #0005;
+  border: 6px solid #fff2;
+  border-radius: 50%;
+  cursor: move;
+  position: absolute;
+  z-index: 98;
+}
+
+.cornerPoint:hover {
+  border-color: #fff8;
+  z-index: 99;
+}
+
+#scrollablePreview {
+  max-width: 100%; 
+  height: 100vh;
+  overflow: scroll; 
+}
+
+#zoomLevel {
+  width: 4.5em;
+  display: inline-block;
+  text-align: center;
+}
+
+#inputPreview, #canIn {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#previewWrapper {
+  position: relative;
+}
+
+#canOut, #txPreview {
+  image-rendering: pixelated;
+}
+
+#txWrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+#txPreview {
+  transform-origin: 0 0;
+  position: relative;
+  left: 0; top: 0;
+}
+
+
+.sidebarAttn { /*attract user's attention to the step that matters */
+
+}
+
+.sidebarMuted { /*future steps are half-transparent and don't respond to mouseover*/
+
+}
+
+/*.segment {
+  width: 1
+}*/

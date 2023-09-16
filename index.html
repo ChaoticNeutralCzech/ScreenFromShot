@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+  <title>ScreenFromShot</title>
+  <link rel="icon" href="icon.png"></link>
+  <link rel="stylesheet" href="style2.css">
+  <!--<script>var exports = {};</script>
+  <script src="lib/wheel-zoom.js" defer=""></script>
+  <script src="gauss-jordan.js" defer=""></script>-->
+  <script src="main2.js" defer=""></script>
+</head>
+
+<body>
+  <div id="picArea" style="display: flex; flex-direction: column;">
+    <div id="uploadArea" class="uploadArea" onchange="dropHandler(event);">
+      <div id="uploadFrame">
+       
+          <p>Drag your picture here or
+            <input type="file" id="uploadButton" hidden onchange="onFile()"> <label for="uploadButton">select&nbsp;file...</label>
+          </p> 
+          <p style="font-size: 10px; font-weight: normal; color: #fff8"> We can't see your files. <a href="privacy.html">About...</a></p>
+        </input>
+      </div>  
+    </div>
+    <button id="sidebarToggler" onclick="toggleSidebar()" style="right: -25px; rotate: .5turn; transition: right 0.2s">&#8249;</button>
+    <div id="scrollablePreview" style="visibility: hidden;"> 
+      <div id="samplingRaster"></div>
+      <div id="previewWrapper">
+        <img id="inputPreview">
+        <canvas id="canIn"></canvas>
+      </div>
+    </div>
+    
+  </div>
+  <div id="sidebar" class="sidebar">
+   <!-- <div id="padSidebar" class="padSidebar" style="height: 60px"></div>-->
+    <div id="sidebarContent" class="sidebarContent">
+      <div style="height: 60px; max-height: 10vh"></div> <!-- intelligent padding-->
+      <a href="#">Open image first</a>
+      <h2>Display resoluton</h2>
+      <input type="number" id="setW" value="5">
+      <input type="button" value="&#x2928" id="switchButton">
+      <input type="number" id="setH" value="5">
+      Zoom: <input type="button" value="&#8722" id="zoomOut">
+      <span id="zoomLevel">100&#8202;%</span>
+      <input type="button" value="+" id="zoomIn"> 
+      <p>Content</br>Content</br>Content</p>
+      <div id="txWrapper">
+        <img id="txPreview" style = "visibility: hidden;"> 
+        <!--<div id="txGrid" style="width: 500px; height: 500px; visibility: visible; position: relative; transform: scale(0.8)"></div>-->
+      </div>
+      
+      <canvas id="canOut"></canvas>
+      
+    </div>
+  </div>
+</body>
